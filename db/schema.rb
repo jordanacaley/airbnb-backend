@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_14_131825) do
+ActiveRecord::Schema.define(version: 2021_02_14_132544) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,20 @@ ActiveRecord::Schema.define(version: 2021_02_14_131825) do
     t.string "zip_code"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "listings", force: :cascade do |t|
+    t.integer "available_beds"
+    t.integer "price"
+    t.text "description"
+    t.boolean "has_wifi"
+    t.text "welcome_message"
+    t.bigint "admin_id"
+    t.bigint "city_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["admin_id"], name: "index_listings_on_admin_id"
+    t.index ["city_id"], name: "index_listings_on_city_id"
   end
 
   create_table "users", force: :cascade do |t|
