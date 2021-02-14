@@ -1,5 +1,6 @@
 class Reservation < ApplicationRecord
   belongs_to :guest, class_name: "User"
+  belongs_to :listing
 
   validate :start_must_be_before_end_date
 
