@@ -20,7 +20,7 @@ class Reservation < ApplicationRecord
   private
 
   def validate_other_booking_overlap
-    other_bookings = Reservation.all
+    other_bookings = Reservation.where(listing_id: self.listing_id)
     is_overlapping = other_bookings.any? do |other_booking|
       period.overlaps?(other_booking.period)
     end
