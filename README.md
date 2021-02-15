@@ -1,24 +1,9 @@
-# README
+# Airbnb backend clone
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project uses Ruby on Rails and PostgreSQL to build a relational database to recreate the Airbnb backend. There are 4 models: ```User``` who can be a guest or an admin of a listing, ```City``` where the listing is located, ```Listing``` with details about the property, and ```Reservation``` for the individual bookings.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Download the code
+2. Run ```bundle install``` in your terminal
+3. Run ```rails db:seed``` in your terminal to generate a sample database
+4. Run ```rails console``` to explore the different relationships
+5. Run ```tp NameOfModel.all``` within the console to visualize the data in neat tables
