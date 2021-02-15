@@ -13,10 +13,10 @@ Reservation.destroy_all
   user = User.create!(email: Faker::Internet.safe_email, phone_number: "06" + Faker::Number.number(digits: 8).to_s, description: Faker::Hipster.sentence(word_count: 10))
 end
 
-# # Generate 10 random cities with Faker
-# 10.times do
-#   city = City.create!(name: Faker::Address.city, zip_code: Faker::Address.zip_code)
-# end
+# Generate 10 random cities with Faker
+10.times do
+  city = City.create!(name: Faker::Address.city, zip_code: Faker::Number.leading_zero_number(digits: 5).to_s)
+end
 
 # # Generate 50 listings with Faker
 # 50.times do
